@@ -1,0 +1,8 @@
+streamlit
+pandas
+matplotlib
+wordcloud
+textblob
+openpyxl
+python-dotenv
+requests
