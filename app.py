@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from feedback_parser import parse_feedback_and_analyze_sentiment, generate_wordcloud, plot_sentiment_distribution
-from qa_module import ask_groq
+from qa_module import ask_groq, generate_summary, generate_swot
 import tempfile
 import os
 from dotenv import load_dotenv
@@ -30,6 +30,23 @@ if uploaded_file:
 
     st.subheader("☁️ Word Cloud")
     generate_wordcloud(df)
+
+    st.subheader("🧠 AI-Generated Insights")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("📄 Generate Summary"):
+            with st.spinner("Generating summary..."):
+                summary = generate_summary(df["feedback"].tolist())
+            st.markdown("**Summary:**")
+            st.write(summary)
+
+    with col2:
+        if st.button("📌 Generate SWOT Analysis"):
+            with st.spinner("Analyzing feedback for SWOT..."):
+                swot = generate_swot(df["feedback"].tolist())
+            st.markdown("**SWOT Analysis:**")
+            st.write(swot)
 
     st.subheader("💬 Ask a question about the feedback")
     user_query = st.text_input("Enter your question")

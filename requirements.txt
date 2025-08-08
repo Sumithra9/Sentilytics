@@ -2,7 +2,10 @@ streamlit
 pandas
 matplotlib
 wordcloud
-textblob
-openpyxl
+nltk
+langchain
+langchain-groq
 python-dotenv
-requests
+sentence-transformers
+faiss-cpu
+openpyxl
