@@ -33,8 +33,8 @@ Sentilytics is an **AI-powered feedback analysis tool** that transforms raw cust
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/Sentilytics.git
-cd contractgenie
+git clone https://github.com/Sumithra9/Sentilytics.git
+cd Sentilytics
 pip install -r requirements.txt
 
 ```
